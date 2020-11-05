@@ -3,6 +3,7 @@ import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { QueryParamProvider } from "use-query-params";
 import Pagination from "../Pagination";
 import Filter from "../Filter";
+import Sort from "../Sort";
 
 const App = () => (
   <Router>
@@ -17,6 +18,9 @@ const App = () => (
         <li>
           <Link to="/filter">Filter</Link>
         </li>
+        <li>
+          <Link to="/sort?order=asc&sort=id">Sort</Link>
+        </li>
       </ul>
       <Switch>
         <Route exact path="/">
@@ -27,6 +31,9 @@ const App = () => (
         </Route>
         <Route path="/filter">
           <Filter />
+        </Route>
+        <Route path="/sort">
+          <Sort />
         </Route>
       </Switch>
     </QueryParamProvider>
