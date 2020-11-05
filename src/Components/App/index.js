@@ -1,5 +1,6 @@
 import React from "react";
 import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Pagination from "../Pagination";
 
 const App = () => (
   <Router>
@@ -8,28 +9,20 @@ const App = () => (
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/about">About</Link>
-      </li>
-      <li>
-        <Link to="/contact">Contact</Link>
+        <Link to="/pagination/1">Pagination</Link>
       </li>
     </ul>
     <Switch>
       <Route exact path="/">
         <Home />
       </Route>
-      <Route path="/about">
-        <About />
-      </Route>
-      <Route path="/contact">
-        <Contact />
+      <Route path="/pagination/:id">
+        <Pagination />
       </Route>
     </Switch>
   </Router>
 );
 
 const Home = () => <div>Home</div>;
-const About = () => <div>About</div>;
-const Contact = () => <div>Contact</div>;
 
 export default App;
