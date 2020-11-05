@@ -30,9 +30,9 @@ const initialState = {
   }
 };
 const PaginationContainer = () => {
-  let { id } = useParams();
-  let history = useHistory();
-  let [data, setData] = useState(initialState);
+  const { id } = useParams();
+  const history = useHistory();
+  const [data, setData] = useState(initialState);
 
   function goToPage(pageNum) {
     history.push(`/pagination/${pageNum}`);
